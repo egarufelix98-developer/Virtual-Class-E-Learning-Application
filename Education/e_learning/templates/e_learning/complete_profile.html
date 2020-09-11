@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="text-center pt-4 pb-2 text-dark">Personal Information</h2>
+          <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            <p class="text-dark">Please complete your profile and get started!</p>
+            <div class="row pl-1 pr-1 pb-3 pt-1">
+              <div class="form-group col-md-6">
+                  <label class="text-dark">First Name:</label>
+                      <input type="text" class="form-control" placeholder="First Name" size="20">
+                  </div>
+                  <div class="form-group col-md-6 pt-1">
+                       <label  class="text-dark">Last Name:</label>
+                      <input type="text" class="form-control" placeholder="Last Name" size="20">
+                  </div>
+                  <div class="form-group col-md-6 pt-3">
+                      <label  class="text-dark">Telephone:</label>
+                      <input type="text" class="form-control" placeholder="Telephone" size="20">
+                  </div>
+                  <div class="form-group col-md-6 pt-3">
+                       <label  class="text-dark">Location:</label>
+                      <input type="text" class="form-control" placeholder="Location" size="20">
+                  </div>
+                  <div class="form-group col-md-6 pt-3">
+                    <label  class="text-dark">Gender:</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6 pt-3">
+                       <label  class="text-dark">Date of Birth</label>
+                      <input type="text" class="form-control" placeholder="First Name" size="20">
+                  </div>
+                  <div class="col-md-12 pt-3">
+                    <button type="submit" class="text-white text-center btn btn-primary styled-button">
+                    Submit Details
+                  </button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

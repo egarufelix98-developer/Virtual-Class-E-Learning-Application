@@ -1,0 +1,94 @@
+{% extends 'teacher_base.html' %}
+
+{% load static %}
+
+{% block head_title %}Virtual-Class{% endblock %}
+{% block content %}
+<!-- Begin Page Content -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" style="background-color: #fdfdff !important;">
+    <li class="breadcrumb-item" aria-current="page"><a class="text-dark" href="{% url 'e_learning:teacher_homepage' %}">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active text-primary" ><a href=" " >Upload content</a>
+    </li>
+  </ol>
+</nav>
+
+<div class="container-fluid mt-5">
+</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="text-center" style="font-family: Times;">
+                        Click class to upload content
+                    </h5>
+                    <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <ul class="pt-3">
+                        <li class='mb-3 zooma' >
+                            <form id="form1" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                                <input type="hidden" name="class_id" value="1">
+                                <!--<input type="submit" value="S1" class="btn btn-primary mb-4" name="register" style="border-radius: 17px;" />-->
+                                <a type="submit" onclick="document.getElementById('form1').submit();" class="S1 zooma" >S.1 <span class="call-text">(Senior one)</span></a>
+                            </form>
+                        </li>
+                        <li class="zooma">
+                            <form id="form2" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                                <input type="hidden" name="class_id" value="2">
+                            </form>
+                            <a type="submit" onclick="document.getElementById('form2').submit();" class="zooma" >S.2 <span class="call-text">(Senior two)</span></a>
+                        </li>
+                        <li class='mt-3 zooma' >
+                            <form id="form3" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                                <input type="hidden" name="class_id" value="3">
+                            </form>
+                            <a type="submit" onclick="document.getElementById('form3').submit();" class="zooma">S.3 <span class="call-text">(Senior three)</span></a>
+                        </li>
+                        <li class='mt-3 zooma' >
+                            <form id="form4" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                                <input type="hidden" name="class_id" value="4">
+                            </form>
+                            <a type="submit" onclick="document.getElementById('form4').submit();" class="zooma">S.4 <span class="call-text">(Senior four)</span></a>
+                        </li>
+                        <li class='mt-3 zooma'>
+                            <form id="form5" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                                <input type="hidden" name="class_id" value="5">
+                            </form>
+                            <a type="submit" onclick="document.getElementById('form5').submit();" class="zooma" >S.5 <span class="call-text">(Senior five)</span></a>
+                        </li>
+                        <li class='mt-3 zooma'>
+                            <form id="form6" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                                <input type="hidden" name="class_id" value="6">
+                            </form>
+                            <a type="submit" onclick="document.getElementById('form6').submit();" class="zooma" >S.6 <span class="call-text">(Senior six)</span></a>
+                            
+                        </li>
+                    </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+
+  
+
+{% endblock %}
